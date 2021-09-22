@@ -32,7 +32,7 @@
             let analyzeButton = document.querySelector('#analyze')
             let usernameInput = document.querySelector('#github-username')
 
-            let statusMessage = document.querySelector('#status')
+            let statusMessage = document.querySelector('#status-message')
 
             let repoList = document.querySelector('#repository-list')
             let repoStats = document.querySelector('#repository-statistics')
@@ -47,7 +47,6 @@
                 fetch(url)   // make request to URL
                     .then(response => response.json())  // extract the JSON from the response 
                     .then(githubJson => {   
-                        console.log(githubJson)   // just to show you that the JSON is available here
                         displayRepositoriesOnPage(githubJson)
                         })
                     .catch(error => {    // handle errors that occur when requesting data or processing the response
@@ -61,6 +60,8 @@
 
             function displayRepositoriesOnPage(githubJson) {
 
+                console.log(githubJson)   // just to show you that the JSON is available here
+                    
                 // TODO use the JSON to display a list of the user's repositories
                 // TODO can you create a link to that repository at GitHub?
                 //   Hint: you can make a new a element, and set that element's src attribute like this
