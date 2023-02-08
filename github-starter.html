@@ -51,27 +51,31 @@
                         })
                     .catch(error => {    // handle errors that occur when requesting data or processing the response
                         console.log(error)
-                        alert('Error fetching data from GitHub. Verify you are connected to the internet and the username is correct.')
+                        alert('Error fetching data from GitHub. Verify you are connected to the internet and the username is correct, and that there are no errors in your code.
+                              \nSee error message in developer tools for more information.')
                     })
                     .finally( () => {
                         statusMessage.innerHTML = ''  // clear status message. Code in the finally handler always runs, regardless if the request works or failed. 
                     })
             })
 
-            function displayRepositoriesOnPage(githubJson) {
+            function displayRepositoriesOnPage(githubJsonArray) {
 
-                console.log(githubJson)   // just to show you that the JSON is available here
+                console.log(githubJsonArray)   // just to show you that the JSON is available here
                     
                 // TODO use the JSON to display a list of the user's repositories
+                //  Hint: create new HTML elements, for example p or h2 or div, one for each repository
+                //   set the innerHTML to the repository's name
+                //   and append that new element to the repoList element. That's created at the start of the script. 
                 // TODO can you create a link to that repository at GitHub?
                 //   Hint: you can make a new a (anchor) element, and set that element's href attribute like this
                 //   myNewAElement.href = 'https://whatever.the/url/is'   // in this code, your URL will most likely be a variable
 
                 // TODO what happens if you search for one user, then another user? Clear previous search results before displaying new list of repositorites
 
-                // What if the user doesn't have any repositories? Display an appropriate message - you can decide how you'll display this.
+                // What if the user doesn't have any public repositories? Display an appropriate message - you can decide how you'll display this.
 
-                // TODO analyze the response and count the number of repositories in each programming language.
+                // TODO Challenge! Analyze the response and count the number of repositories in each programming language.
                 // TODO create elements on page to display the languages used and each languages' frequency
                 
             }
